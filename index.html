@@ -31,59 +31,62 @@
 
 
     <style>
+
+       
       
-  .header-batik{
+        .header-batik{
 
-    width: 100% ;
-    height: 45px;
-    background-image: url('assets/images/kompres/1150.jpg'); /* ganti dengan path gambarnya */
+          width: 100% ;
+          height: 45px;
+          background-image: url('assets/images/kompres/1150.jpg'); /* ganti dengan path gambarnya */
 
-    background-repeat: repeat-x;   /* gambar akan diulang */
-    background-size: 55%;       /* ukuran asli gambar */
-    background-position: top left;
+          background-repeat: repeat-x;   /* gambar akan diulang */
+          background-size: 55%;       /* ukuran asli gambar */
+          background-position: top left;
 
-    position: fixed;
-    z-index: 1000;
-  }
+          position: fixed;
+          z-index: 1000;
+        }
 
-  .hero-subtitle {
-   
-      font-family: "Fleur De Leah", cursive;
-      font-weight: 400;
-      font-style: normal;
+        .hero-subtitle {
+        
+            font-family: "Fleur De Leah", cursive;
+            font-weight: 400;
+            font-style: normal;
 
-  }
-
-
-  .service-card{
-
-    border-radius: 1px !important;
-  }
-  .service-img-l {
-
-    
-    
-  }
+        }
 
 
-  .footer{
-    width: 100%;
-    height: 45px;
-    background-image: url('assets/images/kompres/1150.jpg'); /* ganti dengan path gambarnya */
+        .service-card{
 
-    background-repeat: repeat-x;   /* gambar akan diulang */
-    background-size: 55%;       /* ukuran asli gambar */
-    background-position: top left;
+          border-radius: 1px !important;
+        }
+        .service-img-l {
 
-    position: fixed;
-    z-index: 1000;
-    bottom: 0;
-  }
+          
+          
+        }
 
-  .footer .credits{
-    background-color: rgb(255, 255, 255);
-    padding: 2px 2px;
-  }
+
+        .footer{
+          width: 100%;
+          height: 45px;
+          background-image: url('assets/images/kompres/1150.jpg'); /* ganti dengan path gambarnya */
+
+          background-repeat: repeat-x;   /* gambar akan diulang */
+          background-size: 55%;       /* ukuran asli gambar */
+          background-position: top left;
+
+          position: fixed;
+          z-index: 1000;
+          bottom: 0;
+        }
+
+        .footer .credits{
+          background-color: rgb(255, 255, 255);
+          padding: 2px 2px;
+        }
+
 
     </style>
     
@@ -101,7 +104,29 @@
 
   </head>
   <body>
-    
+
+    <!-- <audio src="assets/lagu/bermuara.mp3" autoplay muted loop></audio> -->
+    <!-- <audio id="musik" src="assets/lagu/bermuara.mp3"></audio> -->
+    <!-- <button onclick="document.getElementById('musik').play()">Play musik</button> -->
+
+    <audio id="musik" src="assets/lagu/bermuara.mp3"></audio>
+
+<script>
+  let sudahMain = false;
+
+  window.addEventListener('scroll', function () {
+    if (!sudahMain) {
+      const audio = document.getElementById('musik');
+      audio.play().then(() => {
+        sudahMain = true;
+        console.log("Audio diputar karena scroll.");
+      }).catch((err) => {
+        console.log("Gagal autoplay: ", err);
+      });
+    }
+  });
+</script>
+
     
     <!-- ======= Site Wrap =======-->
     <div class="site-wrap">
